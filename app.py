@@ -82,7 +82,7 @@ def update_report(id):
     db.session.commit()
 
     # Re-trigger topic generation
-    generate_topics(report)
+    # generate_topics(report)
 
     return jsonify(report.to_dict())
 
