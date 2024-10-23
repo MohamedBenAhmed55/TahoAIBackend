@@ -41,24 +41,6 @@ def get_report(id):
     report = Report.query.get_or_404(id)
     return jsonify(report.to_dict())
 
-# Create a new report
-# @app.route('/reports', methods=['POST'])
-# def create_report():
-#     data = request.json
-#     report = Report(
-#         title=data['title'],
-#         summary=data['summary'],
-#         content=data['content'],
-#         evaluation=data['evaluation']
-#     )
-#     db.session.add(report)
-#     db.session.commit()
-#
-#     # Trigger topic generation
-#     generate_topics(report)
-#
-#     return jsonify(report.to_dict()), 201
-
 from flask import abort
 
 @app.route('/reports', methods=['POST'])
